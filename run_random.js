@@ -68,11 +68,15 @@ function simulateClick(ele) {
     ele.dispatchEvent(event);
 }
 function startRefresh() {
-    refreshTimer = setInterval(refreshSeat, 10);
+    refreshTimer = setInterval(refreshSeat, 800);
 }
 
 function refreshSeat() {
-    iframeSeat.contentWindow.fnRefresh();
+    // 2초 대기 있기 때문에 사용안함
+    //iframeSeat.contentWindow.fnRefresh();
+
+    iframeDetail.contentWindow.location.reload();
+    iframeSeat.contentWindow.fnInitSeat();
 }
 
 function findRect(rects) {
@@ -82,7 +86,7 @@ function findRect(rects) {
         stop();
     }
 
-    if (iframeSeat.contentWindow.document.querySelectorAll("#SelectedSeat tbody tr").length > 0) iframeSeat.contentWindow.fnSelect();
+    if (iframeSeat.contentWindow.SeatBuffer.index > 0) iframeSeat.contentWindow.fnSelect();
 }
 
 function start() {
