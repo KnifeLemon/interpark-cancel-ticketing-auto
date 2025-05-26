@@ -8,6 +8,8 @@
 
 속도 조절이 가능하나 적절하게 조절해두었으니 수정이 필요없습니다.
 
+속도 조절이 필요한 경우 [run_random.js#L149](https://github.com/KnifeLemon/interpark-cancel-ticketing-auto/blob/master/run_random.js#L149) 의 1000 부분을 수정하세요. ( ms 단위 )
+
 실행 중 우측 상단 구역 선택란에서 구역 변경해도 스크립트를 다시 삽입할 필요 없이 이어서 작업됩니다.
 
 ## 사용방법
